@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'styles/themes' as themes;
+
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('assets/fonts/NunitoSans.ttf');
+  font-weight: 300 800;
+}
+
+body {
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+}
