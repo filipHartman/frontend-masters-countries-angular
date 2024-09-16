@@ -1,0 +1,48 @@
+<button class="back" (click)="back()">
+  <fa-icon [icon]="faArrowLeft"></fa-icon> Back
+</button>
+<div class="main-container" *ngIf="detail">
+  <div class="flag-container">
+    <img class="flag" [src]="detail.flags.svg" [alt]="detail.flags.alt" />
+  </div>
+
+  <div>
+    <h2>{{ detail.name.common }}</h2>
+    <div class="details-container">
+      <div class="details-column">
+        <p>
+          <span class="detail-prop">Native Name:</span>
+          {{ detail.name.nativeName | recordParser: 'common' }}
+        </p>
+        <p>
+          <span class="detail-prop">Population:</span>
+          {{ detail.population | number: '1.0-0' }}
+        </p>
+        <p><span class="detail-prop">Region:</span> {{ detail.region }}</p>
+        <p>
+          <span class="detail-prop">Sub Region:</span> {{ detail.subregion }}
+        </p>
+        <p><span class="detail-prop">Capital:</span> {{ detail.capital[0] }}</p>
+      </div>
+      <div class="details-column">
+        <p>
+          <span class="detail-prop">Top Level Domain:</span> {{ detail.tld[0] }}
+        </p>
+        <p>
+          <span class="detail-prop">Currencies:</span>
+          {{ detail.currencies | recordParser: 'name' }}
+        </p>
+        <p>
+          <span class="detail-prop">Languages:</span>
+          {{ Object.values(detail.languages).join(', ') }}
+        </p>
+      </div>
+    </div>
+    <p>
+      <span class="detail-prop border-title">Border Countries: </span>
+      <span class="border" *ngFor="let country of detail.borders">
+        {{ country }}
+      </span>
+    </p>
+  </div>
+</div>

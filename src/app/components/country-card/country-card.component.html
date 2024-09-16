@@ -1,0 +1,10 @@
+<img class="flag" [src]="country.flags.svg" [alt]="country.flags.alt" />
+<div class="card-text">
+  <h2>{{ country.name.common }}</h2>
+  <p><span>Population:</span> {{ country.population }}</p>
+  <p><span>Region:</span> {{ country.region }}</p>
+  <p>
+    <span>Capital:</span>
+    {{ country.capital.length ? country.capital[0] : 'Unknown' }}
+  </p>
+</div>

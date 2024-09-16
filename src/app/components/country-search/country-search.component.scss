@@ -1,0 +1,47 @@
+
+:host {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 80px;
+}
+.input-container {
+  position: relative;
+
+  & fa-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+  }
+  & input {
+    padding: 10px 10px 10px 40px;
+    background-color: var(--elements-color);
+    color:  var(--text-color);
+    border: none;
+    border-radius: 6px;
+    width: 250px;
+    box-shadow: inset 0px 0px 6px 2px color-mix(in oklch, transparent, var(--text-color) 10%);
+    &::placeholder {
+      color: var(--text-color);
+    }
+  }
+}
+
+select {
+  background-color: var(--elements-color);
+  box-shadow: inset 0px 0px 6px 2px color-mix(in oklch, transparent, var(--text-color) 10%);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 160px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-bottom: 2px;
+}

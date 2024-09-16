@@ -2,20 +2,22 @@ import { effect, Injectable, signal } from '@angular/core';
 
 export enum Theme {
   LIGHT = 'light',
-  DARK = 'dark'
+  DARK = 'dark',
 }
 
-@Injectable({ providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class ThemeService {
-  public currentTheme = signal<Theme>(Theme.LIGHT);
+  public currentTheme = signal<Theme>(Theme.DARK);
 
   constructor() {
     effect(() => {
       document.body.setAttribute('data-theme', this.currentTheme());
-    })
+    });
   }
 
   toggleTheme() {
-    this.currentTheme.set(this.currentTheme() === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
+    this.currentTheme.set(
+      this.currentTheme() === Theme.LIGHT ? Theme.DARK : Theme.LIGHT,
+    );
   }
 }

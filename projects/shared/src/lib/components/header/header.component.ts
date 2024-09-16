@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Theme, ThemeService } from '../../core/services/theme.service';
+import { Theme, ThemeService } from '../../services';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMoon as fullMoon } from '@fortawesome/free-regular-svg-icons';
 import { faMoon as moon } from '@fortawesome/free-solid-svg-icons';
 import { TitleCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-header',
+  selector: 'shared-header',
   template: `
       <header>
           <h1>Where in the world?</h1>

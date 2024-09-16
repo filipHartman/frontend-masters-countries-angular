@@ -2,7 +2,8 @@ export interface Country {
   name: CountryName;
   capital: string[];
   region: string;
-  flag: CountryFlag;
+  flags: CountryFlag;
+  population: number;
 }
 
 export interface CountryName {
